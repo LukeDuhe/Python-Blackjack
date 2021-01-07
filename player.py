@@ -2,12 +2,8 @@ class Player(object):
     """
     docstring
     """
-    
-    def __init__(self):
-        self.total = 0
-        self.hand = []
 
-        self.card_values = {
+    card_values = {
             "ace":11,
             "king":10,
             "queen":10,
@@ -23,6 +19,10 @@ class Player(object):
             "two":2,
             "one":1
         }
+    
+    def __init__(self):
+        self.total = 0
+        self.hand = []
 
     def add_to_hand(self, card):
         self.hand.append(card)

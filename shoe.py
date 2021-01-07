@@ -5,26 +5,16 @@ class Shoe(object):
     """
     docstring
     """
+
+    def shuffle(self):
+        self._cards = {card: 4 for card in self.default_cards}
     
     def __init__(self):
-        self.default_cards = {
-            "ace":4,
-            "king":4,
-            "queen":4,
-            "jack":4,
-            "ten":4,
-            "nine":4,
-            "eight":4,
-            "seven":4,
-            "six":4,
-            "five":4,
-            "four":4,
-            "three":4,
-            "two":4,
-            "one":4
-        }
+        self.default_cards = ["ace", "king", "queen", "jack", "ten", "nine", 
+                                "eight", "seven", "six", "five", "four", "three", "two", "one"]
 
-        self._cards = self.default_cards
+        self._cards = {}
+        self.shuffle()
 
     def get_filtered_deck(self):
         deck = list(self._cards.keys())
@@ -36,6 +26,3 @@ class Shoe(object):
         card = random.choice(available_cards)
         self._cards[card] -= 1
         return card
-
-    def reshuffle(self):
-        self._cards = self.default_cards
